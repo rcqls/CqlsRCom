@@ -1,0 +1,26 @@
+# Everything here is inspired from Rcpp package 
+
+PKG_CFLAGS =	-I../inst/include/
+
+## we place it inside the inst/ directory so that it gets installed by the package
+USERDIR	= 	../inst/lib$(R_ARCH)
+STATICLIB =	libCqlsRCom.a
+USERLIB	= 	$(USERDIR)/$(STATICLIB)
+
+RM = 		rm -f
+
+.PHONY: 	all clean
+
+all: 		userlib $(SHLIB)
+
+clean:
+		${RM} $(OBJECTS) $(SHLIB)
+
+$(USERLIB):	$(OBJECTS)
+
+userlib:	$(STATICLIB)
+		-mkdir -p $(USERDIR)
+		-mv $(STATICLIB) $(USERLIB) 
+
+$(STATICLIB):	$(OBJECTS)
+

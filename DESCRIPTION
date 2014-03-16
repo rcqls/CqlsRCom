@@ -1,0 +1,11 @@
+Package: CqlsRCom
+Version: 0.1.1
+Date: 2011-06-01
+Title: R and C tools for communication between R and C inside Cqls projects
+Author: Cqls Team
+Maintainer: Remy Drouilhet <rdrouilh@gmail.com>
+Depends: R (>= 2.10.0)
+Description: Communication between R and C for Cqls projects.
+License: GPL (>= 2)
+
+
